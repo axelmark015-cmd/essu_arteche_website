@@ -17,6 +17,8 @@ Static HTML/CSS website.
 
 Open index.html in a browser.
 
+#new line
+
 ## Contributing
 
 1. Fork the repository

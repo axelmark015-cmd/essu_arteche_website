@@ -9,21 +9,367 @@
 
         <h1>Student Profile</h1>
 
-        <img src="assets/realiza.png" alt="Profile Pictcure" width="180">
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
 
+    <p>
+        This page contains the profile information of a student enrolled at
+        <strong>Eastern Samar State University - Arteche Extension Campus</strong>.
+        </p>
+   
+    <hr>
 
-        <h2>Personal Information</h2>
+    <!-- ========================= -->
+    <!-- PROFILE PHOTO -->
+    <!-- ========================= -->
 
-        <p><strong>Name:</strong>Villanueva Realiza P.</p>
-        <p><strong>Course:</strong>BS information Technology</p>
-        <p><strong>School:</strong>Eastern Samar State University</p>
-        <p><strong>Email:</strong>v37152527@gmail.com</p>
+    <h2>Profile Picture</h2>
 
-        <h2>About Me</h2>
+    <img src="./assets/realiza.png"
+         alt="Student Picture"
+         width="200"
+         height="200">
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- PERSONAL INFORMATION -->
+    <!-- ========================= -->
+
+    <h2>Personal Information</h2>
+
+    <p><strong>Full Name:</strong> Villanueva Realiza P.</p>
+
+    <p><strong>Student Number:</strong> 23-05187</p>
+
+    <p><strong>Program:</strong> Bachelor of Science in Information Technology</p>
+
+    <p><strong>Year Level:</strong> Fourth Year</p>
+
+    <p><strong>Gmail:</strong> v37152527@gmail.com</p>
+
+    <p><strong>Address:</strong> Brgy. Concepcion Arteche E.S</p>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- TEXT FORMATTING -->
+    <!-- ========================= -->
+
+    <h2>Text Formatting Examples</h2>
+
+    <p>
+        <b>Bold</b><br>
+        <strong>Strong Importance</strong><br>
+        <i>Italic</i><br>
+        <em>Emphasized Text</em><br>
+        <u>Underlined Text</u><br>
+        <mark>Highlighted Text</mark><br>
+        <small>Small Text</small><br>
+        H<sub>2</sub>O<br>
+        X<sup>2</sup><br>
+        <del>Deleted Text</del><br>
+        <ins>Inserted Text</ins>
+    </p>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- BIOGRAPHY -->
+    <!-- ========================= -->
+
+    <h2>Biography</h2>
+
+    <p>
+        My name is Realiza P. Villanueva. I am a fourth year college student, my course is Bachelor of science in Information Technology 
+        at Eastern Samar State University- Arteche. My hobbies include watching chinese drama and playing piano.
+    </p>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- LISTS -->
+    <!-- ========================= -->
+
+    <h2>Skills</h2>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Microsoft Office</li>
+        <li>Problem Solving</li>
+    </ul>
+
+    <h2>Educational Background</h2>
+
+    <ol>
+        <li>Elementary</li>
+        <li>Junior High School</li>
+        <li>Senior High School</li>
+        <li>College</li>
+    </ol>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- LINKS -->
+    <!-- ========================= -->
+
+    <h2>Useful Links</h2>
+
+    <p>
+        <a href="index.html">Home</a><br>
+
+        <a href="about.html">About</a><br>
+
+        <a href="academics.html">Academics</a><br>
+
+        <a href="contact.html">Contact</a><br>
+
+        <a href="https://www.google.com" target="_blank">
+            Visit Google
+        </a>
+    </p>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- TABLE -->
+    <!-- ========================= -->
+
+    <h2>Current Subjects</h2>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>Course Code</th>
+            <th>Description</th>
+            <th>Instructor</th>
+            <th>Schedule</th>
+        </tr>
+
+        <tr>
+            <td>IT413 / Elective 3*</td>
+            <td>Web Systems and Technologies</td>
+            <td>Mr. Silla</td>
+            <td>MW 7:30 AM</td>
+        </tr>
+
+        <tr>
+            <td>Comp 212</td>
+            <td>Object Oriented Programming</td>
+            <td>Mr. Silla</td>
+            <td>TTH 10:00 AM</td>
+        </tr>
+
+        <tr>
+            <td>IT 314 / Elective 1*</td>
+            <td>Advanced Database Systems</td>
+            <td>Mr. Silla</td>
+            <td>MWF 2:00 PM</td>
+        </tr>
+
+    </table>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- BLOCK AND INLINE ELEMENTS -->
+    <!-- ========================= -->
+
+    <h2>Block and Inline Elements</h2>
+
+    <div>
 
         <p>
-            I am a BSIT student, 4th year college,my hobbies
-            for now is watching chinese drama, playing coffee simulator and also playing piano.
+            This paragraph is inside a
+            <span>DIV</span> element.
+
+            The word
+            <span style="color:red;">
+                RED
+            </span>
+
+            is displayed using a SPAN element.
+            
         </p>
+
+    </div>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- COLORS -->
+    <!-- ========================= -->
+
+    <h2>HTML Color Examples</h2>
+
+    <p style="color:blue;">
+        This text is blue.
+    </p>
+
+    <p style="color:red;">
+        This text is red.
+    </p>
+
+    <p style="background-color:yellow;">
+        Yellow Background
+    </p>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- FORM -->
+    <!-- ========================= -->
+
+    <h2>Contact the Student</h2>
+
+    <form>
+
+        <p>
+
+            <label for="fullname">
+                Full Name:
+            </label>
+
+            <br>
+
+            <input
+                type="text"
+                id="fullname"
+                name="fullname">
+
+        </p>
+
+        <p>
+
+            <label for="email">
+                Email Address:
+            </label>
+
+            <br>
+
+            <input
+                type="email"
+                id="email"
+                name="email">
+
+        </p>
+
+        <p>
+
+            <label for="course">
+                Course:
+            </label>
+
+            <br>
+
+            <select id="course">
+
+                <option>BSIT</option>
+                <option>BSEd</option>
+                <option>BEEd</option>
+                <option>BSHM</option>
+
+            </select>
+
+        </p>
+
+        <p>
+
+            Gender
+
+            <br>
+
+            <input
+                type="radio"
+                name="gender">
+
+            Male
+
+            <br>
+
+            <input
+                type="radio"
+                name="gender">
+
+            Female
+
+        </p>
+
+        <p>
+
+            Interests
+
+            <br>
+
+            <input type="checkbox">
+
+            Programming
+
+            <br>
+
+            <input type="checkbox">
+
+            Networking
+
+            <br>
+
+            <input type="checkbox">
+
+            Multimedia
+
+        </p>
+
+        <p>
+
+            <label for="message">
+                Message
+            </label>
+
+            <br>
+
+            <textarea
+                id="message"
+                rows="5"
+                cols="40"></textarea>
+
+        </p>
+
+        <input type="submit" value="Submit">
+
+        <input type="reset" value="Clear">
+
+    </form>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- IFRAME -->
+    <!-- ========================= -->
+
+    <h2>School Location</h2>
+
+    <iframe
+        src="https://www.google.com"
+        width="600"
+        height="300">
+    </iframe>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <p>
+
+        &copy; 2026 ESSU - Arteche
+
+    </p>
+
+
     </body>
 </html>

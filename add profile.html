@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#F5F0FF;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+    background:#FFFFFF;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    overflow:hidden;
+}
+
+.cover{
+    background:#C8A2FF;
+    height:180px;
+}
+
+.profile{
+    text-align:center;
+    margin-top:-60px;
+    padding:0 20px 30px;
+}
+
+.profile img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:5px solid #FFFFFF;
+    object-fit:cover;
+    background:#ddd;
+}
+
+.profile h2{
+    margin-top:10px;
+    color:#333;
+}
+
+.profile p{
+    color:#666;
+    margin-top:5px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 25px;
+    background:#B388FF;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#9B6DFF;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    background:#F9F5FF;
+    border:1px solid #E4D7FF;
+    border-radius:10px;
+    padding:20px;
+}
+
+.card h3{
+    color:#9B6DFF;
+    margin-bottom:15px;
+}
+
+.card p{
+    margin:10px 0;
+    color:#555;
+    line-height:1.5;
+}
+
+@media(max-width:768px){
+    .info{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="cover"></div>
+
+    <div class="profile">
+        <img src="https://via.placeholder.com/120" alt="Profile Picture">
+
+        <h2>Edelina Diolola</h2>
+        <p>Web Developer</p>
+
+        <a href="#" class="btn">Edit Profile</a>
+    </div>
+
+    <div class="info">
+
+        <div class="card">
+            <h3>Personal Information</h3>
+
+            <p><strong>Full Name:</strong> Edelina Diolola</p>
+            <p><strong>Email:</strong> edelinadiolola@gmail.com</p>
+            <p><strong>Phone:</strong> +63 9161185944</p>
+            <p><strong>Address:</strong> San Policarpo</p>
+        </div>
+
+        <div class="card">
+            <h3>About Me</h3>
+
+            <p>
+                   I am a 4th-year BSIT student who is passionate about 
+              technology and continuously learning web development, programming,
+              and database management.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

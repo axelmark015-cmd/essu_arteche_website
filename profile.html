@@ -1,377 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Profile | ESSU-AEC</title>
-</head>
+    <title>Student Profile - ESSU AEC</title>
 
+    <!-- Site styles -->
+    <link rel="stylesheet" href="about_style.css">
+
+    <!-- Icons + fonts (used across site) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Page-specific styles (kept minimal) */
+        .profile-wrap {
+            padding: 100px 0 80px;
+        }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            align-items: start;
+        }
+        .profile-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 24px;
+        }
+        .profile-head {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #f5f7fa;
+            flex: 0 0 auto;
+        }
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-meta h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(20, 79, 22, 0.08);
+            color: #144f16ff;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+        .muted { color: #666; }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .chip {
+            background: #f5f7fa;
+            border: 1px solid rgba(20, 79, 22, 0.15);
+            border-radius: 999px;
+            padding: 6px 10px;
+            font-weight: 600;
+        }
+        .inline-block { display: inline-block; }
+        .hl { background: #fff3cd; padding: 0 6px; border-radius: 4px; }
+        .contact-links a { margin-right: 10px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        label { display: block; font-weight: 700; margin-bottom: 6px; }
+        input[type="text"], input[type="email"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(20, 79, 22, 0.2);
+            border-radius: 10px;
+            outline: none;
+        }
+        textarea { min-height: 110px; resize: vertical; }
+        button {
+            background: #144f16ff;
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        button:hover { background: #0f3c12ff; }
+        .profile-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+        .profile-table th, .profile-table td {
+            border: 1px solid rgba(0,0,0,0.08);
+            padding: 10px;
+            text-align: left;
+        }
+        blockquote {
+            margin: 16px 0;
+            padding: 14px 16px;
+            background: rgba(20, 79, 22, 0.05);
+            border-left: 6px solid #ffc107;
+            border-radius: 8px;
+        }
+        .preview-map {
+            width: 100%;
+            height: 240px;
+            border: 0;
+            border-radius: 12px;
+        }
+        iframe { border: 0; }
+
+        @media (max-width: 992px) {
+            .profile-grid { grid-template-columns: 1fr; }
+            .profile-wrap { padding-top: 120px; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
 <body>
 
-    <!-- ========================= -->
-    <!-- HEADER -->
-    <!-- ========================= -->
-
-    <h1>Student Profile</h1>
-
-    <p>
-        This page contains the profile information of a student enrolled at
-        <strong>Eastern Samar State University - Arteche Extension Campus</strong>.
-    </p>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- PROFILE PHOTO -->
-    <!-- ========================= -->
-
-    <h2>Profile Picture</h2>
-
-    <img src="./assets/images/default.png"
-         alt="Student Picture"
-         width="200"
-         height="200">
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- PERSONAL INFORMATION -->
-    <!-- ========================= -->
-
-    <h2>Personal Information</h2>
-
-    <p><strong>Full Name:</strong> Pedro San Juan</p>
-
-    <p><strong>Student Number:</strong> 2024-0001</p>
-
-    <p><strong>Program:</strong> Bachelor of Science in Information Technology</p>
-
-    <p><strong>Year Level:</strong> Second Year</p>
-
-    <p><strong>Email:</strong> juandelacruz@email.com</p>
-
-    <p><strong>Address:</strong> Cebu City, Philippines</p>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- TEXT FORMATTING -->
-    <!-- ========================= -->
-
-    <h2>Text Formatting Examples</h2>
-
-    <p>
-        <b>Bold</b><br>
-        <strong>Strong Importance</strong><br>
-        <i>Italic</i><br>
-        <em>Emphasized Text</em><br>
-        <u>Underlined Text</u><br>
-        <mark>Highlighted Text</mark><br>
-        <small>Small Text</small><br>
-        H<sub>2</sub>O<br>
-        X<sup>2</sup><br>
-        <del>Deleted Text</del><br>
-        <ins>Inserted Text</ins>
-    </p>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- BIOGRAPHY -->
-    <!-- ========================= -->
-
-    <h2>Biography</h2>
-
-    <p>
-        Juan Dela Cruz is currently taking Bachelor of Science in Information
-        Technology. He enjoys learning web development, programming,
-        database management, and networking.
-    </p>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- LISTS -->
-    <!-- ========================= -->
-
-    <h2>Skills</h2>
-
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Microsoft Office</li>
-        <li>Problem Solving</li>
-    </ul>
-
-    <h2>Educational Background</h2>
-
-    <ol>
-        <li>Elementary</li>
-        <li>Junior High School</li>
-        <li>Senior High School</li>
-        <li>College</li>
-    </ol>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- LINKS -->
-    <!-- ========================= -->
-
-    <h2>Useful Links</h2>
-
-    <p>
-        <a href="index.html">Home</a><br>
-
-        <a href="about.html">About</a><br>
-
-        <a href="academics.html">Academics</a><br>
-
-        <a href="contact.html">Contact</a><br>
-
-        <a href="https://www.google.com" target="_blank">
-            Visit Google
-        </a>
-    </p>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- TABLE -->
-    <!-- ========================= -->
-
-    <h2>Current Subjects</h2>
-
-    <table border="1" cellpadding="10">
-
-        <tr>
-            <th>Course Code</th>
-            <th>Description</th>
-            <th>Instructor</th>
-            <th>Schedule</th>
-        </tr>
-
-        <tr>
-            <td>IT413 / Elective 3*</td>
-            <td>Web Systems and Technologies</td>
-            <td>Mr. Silla</td>
-            <td>MW 7:30 AM</td>
-        </tr>
-
-        <tr>
-            <td>Comp 212</td>
-            <td>Object Oriented Programming</td>
-            <td>Mr. Silla</td>
-            <td>TTH 10:00 AM</td>
-        </tr>
-
-        <tr>
-            <td>IT 314 / Elective 1*</td>
-            <td>Advanced Database Systems</td>
-            <td>Mr. Silla</td>
-            <td>MWF 2:00 PM</td>
-        </tr>
-
-    </table>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- BLOCK AND INLINE ELEMENTS -->
-    <!-- ========================= -->
-
-    <h2>Block and Inline Elements</h2>
-
-    <div>
-
-        <p>
-            This paragraph is inside a
-            <span>DIV</span> element.
-
-            The word
-            <span style="color:red;">
-                RED
-            </span>
-
-            is displayed using a SPAN element.
-        </p>
-
-    </div>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- COLORS -->
-    <!-- ========================= -->
-
-    <h2>HTML Color Examples</h2>
-
-    <p style="color:blue;">
-        This text is blue.
-    </p>
-
-    <p style="color:red;">
-        This text is red.
-    </p>
-
-    <p style="background-color:yellow;">
-        Yellow Background
-    </p>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- FORM -->
-    <!-- ========================= -->
-
-    <h2>Contact the Student</h2>
-
-    <form>
-
-        <p>
-
-            <label for="fullname">
-                Full Name:
-            </label>
-
-            <br>
-
-            <input
-                type="text"
-                id="fullname"
-                name="fullname">
-
-        </p>
-
-        <p>
-
-            <label for="email">
-                Email Address:
-            </label>
-
-            <br>
-
-            <input
-                type="email"
-                id="email"
-                name="email">
-
-        </p>
-
-        <p>
-
-            <label for="course">
-                Course:
-            </label>
-
-            <br>
-
-            <select id="course">
-
-                <option>BSIT</option>
-                <option>BSEd</option>
-                <option>BEEd</option>
-                <option>BSHM</option>
-
-            </select>
-
-        </p>
-
-        <p>
-
-            Gender
-
-            <br>
-
-            <input
-                type="radio"
-                name="gender">
-
-            Male
-
-            <br>
-
-            <input
-                type="radio"
-                name="gender">
-
-            Female
-
-        </p>
-
-        <p>
-
-            Interests
-
-            <br>
-
-            <input type="checkbox">
-
-            Programming
-
-            <br>
-
-            <input type="checkbox">
-
-            Networking
-
-            <br>
-
-            <input type="checkbox">
-
-            Multimedia
-
-        </p>
-
-        <p>
-
-            <label for="message">
-                Message
-            </label>
-
-            <br>
-
-            <textarea
-                id="message"
-                rows="5"
-                cols="40"></textarea>
-
-        </p>
-
-        <input type="submit" value="Submit">
-
-        <input type="reset" value="Clear">
-
-    </form>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- IFRAME -->
-    <!-- ========================= -->
-
-    <h2>School Location</h2>
-
-    <iframe
-        src="https://www.google.com"
-        width="600"
-        height="300">
-    </iframe>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- FOOTER -->
-    <!-- ========================= -->
-
-    <p>
-
-        &copy; 2026 ESSU - Arteche
-
-    </p>
+    <!-- Header (same structure as other pages) -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./assets/images/essu.png" alt="ESSU Logo">
+                    <div class="logo-text">
+                        <h1>Eastern Samar State University Arteche Extension Campus</h1>
+                        <span>Excellence in Education Since 2018</span>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="campus-life.html">Campus Life</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="profile.html" class="active">Profile</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Page header -->
+    <section class="page-hero">
+        <div class="container">
+            <h2>Student Profile</h2>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Profile</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <main class="profile-wrap">
+        <div class="container">
+
+            <section class="profile-grid" aria-label="Student profile layout">
+                <!-- Left column -->
+                <div class="profile-card">
+                    <div class="profile-head">
+                        <div class="profile-avatar" aria-hidden="true">
+                            <img src="./assets/images/default.png" alt="Student avatar placeholder">
+                        </div>
+                        <div class="profile-meta">
+                            <h1>EGOT PEDRO</h1>
+                            <div class="tag">BSIT 4A • STUDENT</div>
+                            <p class="muted"><i class="fa-solid fa-user" aria-hidden="true"></i> Age: <b>23</b> years old</p>
+                        </div>
+                    </div>
+
+                    <h2 style="margin-bottom: 10px;">About Me</h2>
+                    <p>
+                        <mark>IM A HARD WORKING STUDENT</mark>.
+                        I’m currently studying <b>BSIT 4A</b> and I enjoy learning new technologies.
+                        <br>
+                        My goal is to become a reliable IT professional and continuously improve my skills.
+                    </p>
+
+                    <blockquote>
+                        <b>Quote:</b> <i>“Consistency turns effort into results.”</i>
+                        <div class="muted" style="margin-top:8px;">
+                            — <small>Student Motto</small>
+                        </div>
+                    </blockquote>
+
+                    <h3>Interests (List)</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-code"></i> Web Development</li>
+                        <li><i class="fa-solid fa-database"></i> Database & SQL</li>
+                        <li><i class="fa-solid fa-network-wired"></i> Networking</li>
+                    </ul>
+
+                    <h3>Skills (Inline + Block examples)</h3>
+                    <p>
+                        I’m interested in <span class="hl">HTML</span>, <span class="hl">CSS</span>, and
+                        <span class="hl">JavaScript</span>. I also like using
+                        <code>git</code> for version control.
+                    </p>
+                    <div class="skills" role="list">
+                        <span class="chip" role="listitem">HTML</span>
+                        <span class="chip" role="listitem">CSS</span>
+                        <span class="chip" role="listitem">JavaScript</span>
+                        <span class="chip" role="listitem">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Right column -->
+                <div class="profile-card">
+                    <h2>Profile Details (Table)</h2>
+                    <table class="profile-table" aria-label="Profile details table">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Name</b></td>
+                                <td>EGOT PEDRO</td>
+                            </tr>
+                            <tr>
+                                <td><b>Age</b></td>
+                                <td>23 years old</td>
+                            </tr>
+                            <tr>
+                                <td><b>Course</b></td>
+                                <td>BSIT 4A</td>
+                            </tr>
+                            <tr>
+                                <td><b>Status</b></td>
+                                <td>Student</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 style="margin-top: 18px;">Favorite Links</h3>
+                    <ul>
+                        <li>
+                            Useful reference:
+                            <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a>
+                        </li>
+                        <li>
+                            Contact via email:
+                            <a href="mailto:student@example.com">student@example.com</a>
+                        </li>
+                        <li>
+                            Contact via phone:
+                            <a href="tel:+639000000000">+63 900 000 0000</a>
+                        </li>
+                    </ul>
+
+                    <h3>Message Form (Form elements)</h3>
+                    <form action="#send_profile_message" method="POST" class="contact-form">
+                        <div class="form-row">
+                            <div>
+                                <label for="fullName">Full Name</label>
+                                <input id="fullName" name="fullName" type="text" placeholder="Your name" required>
+                            </div>
+                            <div>
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 12px;">
+                            <label for="topic">Topic</label>
+                            <select id="topic" name="topic" required>
+                                <option value="" selected disabled>Select a topic</option>
+                                <option value="projects">Projects</option>
+                                <option value="advice">Advice</option>
+                                <option value="events">Campus Events</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-top: 12px;">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+                        </div>
+
+                        <div style="margin-top: 10px;">
+                            <input id="agree" name="agree" type="checkbox" required>
+                            <label for="agree" style="display:inline-block; margin:0; font-weight:600;">I agree to be contacted back.</label>
+                        </div>
+
+                        <div style="margin-top: 14px;">
+                            <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+                            <small class="muted" style="display:block; margin-top:10px;">
+                                Note: This is a basic front-end form for the HTML assignment.
+                            </small>
+                        </div>
+                    </form>
+
+                    <h3 style="margin-top: 18px;">Ordered List + Inline</h3>
+                    <ol>
+                        <li>Read the syllabus</li>
+                        <li>Practice coding daily</li>
+                        <li>Submit outputs on time</li>
+                    </ol>
+
+                    <h3 style="margin-top: 18px;">Campus Preview (iframe)</h3>
+                    <p class="muted">
+                        Embedded map preview (example embed):
+                        <span class="inline-block"><i class="fa-solid fa-location-dot"></i></span>
+                    </p>
+                    <iframe
+                        class="preview-map"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Arteche Eastern Samar campus map preview"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3857.123456789!2d125.456789!3d12.345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x123456789abcdef%3A0xabcdef123456789!2sArteche%20Eastern%20Samar!5e0!3m2!1sen!2sph!4v0000000000">
+                    </iframe>
+
+                    <h3 style="margin-top: 18px;">Image (with figure-like grouping)</h3>
+                    <figure>
+                        <img src="./assets/images/4thYear2026.png" alt="Student and campus related image" style="width:100%; border-radius: 12px;">
+                        <figcaption class="muted" style="margin-top: 8px;">
+                            A campus-related image using relative paths.
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Small extra section for block/inline formatting coverage -->
+            <section class="profile-card" style="margin-top: 28px;">
+                <h2>Quick Notes (Formatting tags)</h2>
+                <p>
+                    This page uses <b>bold</b>, <i>italic</i>, <u>underlined</u> (where appropriate),
+                    and <small>small text</small> for helper notes.
+                </p>
+                <p>
+                    Inline code example: <code><form></code> and <code><table></code>.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer (same structure as other pages) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Eastern Samar State University AEC</h3>
+                    <p>National Highway, Sitio Core<br>Balud Arteche Eastern Samar<br>Philippines</p>
+                    <p>Phone: (123) 456-7890<br>Email: info@essu.edu</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="campus-life.html">Campus Life</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#login.php">Student Portal</a></li>
+                        <li><a href="#login.php">Faculty Portal</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Campus Directory</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p>Stay updated with the latest news and events from ESSU AEC by following us on social media.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Eastern Samar State University Arteche Extension Campus. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
-
 </html>
+

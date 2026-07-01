@@ -5,457 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Profile | ESSU-AEC</title>
-    <meta name="description"
-        content="View the student profile dashboard of Juan Dela Cruz at Eastern Samar State University Arteche Extension Campus (ESSU AEC). Info on subjects, skills, and educational background.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="about_style.css">
-    <style>
-        :root {
-            --primary-color: #144f16;
-            --primary-gradient: linear-gradient(135deg, #144f16 0%, #41e657 100%);
-            --accent-color: #ffc107;
-            --text-color: #333333;
-            --bg-color: #f5f7fa;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --success-color: #10b981;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 992px) {
-            .dashboard-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .dashboard-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            margin-bottom: 30px;
-            transition: var(--transition);
-        }
-
-        .dashboard-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-color);
-            position: relative;
-            color: var(--primary-color);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-
-        .card-title::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--accent-color);
-        }
-
-        .profile-photo-container {
-            position: relative;
-            padding: 10px 0;
-        }
-
-        .profile-photo-container img {
-            border-radius: 50%;
-            border: 4px solid var(--primary-color);
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            object-fit: cover;
-        }
-
-        .profile-photo-container img:hover {
-            transform: scale(1.05);
-            border-color: var(--accent-color);
-        }
-
-        .status-badge {
-            display: inline-block;
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--success-color);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-top: 15px;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-        }
-
-        .info-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px dashed var(--border-color);
-        }
-
-        .info-item:last-child {
-            border-bottom: none;
-        }
-
-        .info-item i {
-            color: var(--primary-color);
-            width: 25px;
-            font-size: 1.1rem;
-            margin-right: 15px;
-        }
-
-        .info-item strong {
-            color: #555;
-            font-weight: 600;
-            margin-right: 8px;
-            min-width: 130px;
-        }
-
-        .info-item span {
-            color: #333;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            list-style: none;
-            padding: 0;
-        }
-
-        .skills-list li {
-            background: var(--bg-color);
-            color: var(--primary-color);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .skills-list li:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            list-style: none;
-            margin: 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 5px;
-            bottom: 5px;
-            width: 2px;
-            background: var(--border-color);
-        }
-
-        .timeline li {
-            position: relative;
-            margin-bottom: 20px;
-            font-weight: 600;
-            color: var(--primary-color);
-            font-size: 0.95rem;
-            font-family: 'Open Sans', sans-serif;
-            padding-left: 5px;
-        }
-
-        .timeline li:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline li::before {
-            content: '';
-            position: absolute;
-            left: -28px;
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent-color);
-            border: 2px solid white;
-            box-shadow: 0 0 0 2px var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .timeline li:hover::before {
-            background: var(--primary-color);
-        }
-
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin: 0;
-        }
-
-        .links-container a {
-            display: flex;
-            align-items: center;
-            background: var(--bg-color);
-            color: var(--primary-color);
-            text-decoration: none;
-            padding: 12px 15px;
-            border-radius: 8px;
-            font-weight: 600;
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .links-container a i {
-            margin-right: 12px;
-            width: 18px;
-            text-align: center;
-        }
-
-        .links-container a:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-            transform: translateX(5px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .subjects-table-wrapper {
-            overflow-x: auto;
-        }
-
-        .subjects-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            margin-top: 10px;
-            border: none !important;
-        }
-
-        .subjects-table th {
-            background: var(--primary-gradient);
-            color: white;
-            font-weight: 600;
-            padding: 15px !important;
-            font-size: 0.95rem;
-            border: none !important;
-        }
-
-        .subjects-table td {
-            padding: 15px !important;
-            border-bottom: 1px solid var(--border-color) !important;
-            border-top: none !important;
-            border-left: none !important;
-            border-right: none !important;
-            font-size: 0.9rem;
-            color: #4b5563;
-        }
-
-        .subjects-table tr:hover {
-            background-color: #f8fafc;
-        }
-
-        .student-contact-form p {
-            margin-bottom: 20px;
-        }
-
-        .student-contact-form label {
-            font-weight: 600;
-            color: #374151;
-            font-size: 0.95rem;
-        }
-
-        .student-contact-form input[type="text"],
-        .student-contact-form input[type="email"],
-        .student-contact-form select,
-        .student-contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            color: var(--text-color);
-            background-color: #f8fafc;
-            transition: var(--transition);
-            margin-top: 5px;
-        }
-
-        .student-contact-form input[type="text"]:focus,
-        .student-contact-form input[type="email"]:focus,
-        .student-contact-form select:focus,
-        .student-contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            background-color: white;
-            box-shadow: 0 0 0 3px rgba(20, 79, 22, 0.15);
-        }
-
-        .student-contact-form input[type="radio"],
-        .student-contact-form input[type="checkbox"] {
-            accent-color: var(--primary-color);
-            margin-right: 8px;
-            width: 16px;
-            height: 16px;
-            vertical-align: middle;
-        }
-
-        .student-contact-form label[for="gender-male"],
-        .student-contact-form label[for="gender-female"],
-        .student-contact-form label[for^="interest-"] {
-            font-weight: normal;
-            color: #4b5563;
-            cursor: pointer;
-            vertical-align: middle;
-        }
-
-        .btn-submit {
-            background: var(--primary-gradient);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            margin-right: 10px;
-        }
-
-        .btn-submit:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-1px);
-            filter: brightness(1.1);
-        }
-
-        .btn-reset {
-            background: transparent;
-            color: #4b5563;
-            border: 1px solid var(--border-color);
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn-reset:hover {
-            background: #f1f5f9;
-            color: #1e293b;
-            border-color: #cbd5e1;
-        }
-
-        .demo-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        @media (max-width: 768px) {
-            .demo-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .demo-item {
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-        }
-
-        .demo-subtitle {
-            font-size: 1rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .demo-subtitle i {
-            margin-right: 8px;
-        }
-
-        .formatting-list {
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-
-        .block-inline-demo {
-            border: 1px solid #cbd5e1;
-            padding: 15px;
-            background: white;
-            border-radius: 6px;
-        }
-
-        .color-demo-container {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .map-container {
-            position: relative;
-            width: 100%;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            margin-top: 10px;
-        }
-
-        .map-container iframe {
-            display: block;
-            width: 100%;
-            height: 300px;
-            border: 0;
-        }
-
-        nav ul li a.active {
-            color: var(--accent-color) !important;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 5px;
-        }
-    </style>
 </head>
 
 <body>
@@ -463,6 +12,7 @@
     <!-- ========================= -->
     <!-- HEADER -->
     <!-- ========================= -->
+<<<<<<< HEAD
     <header>
         <div class="container">
             <div class="header-content">
@@ -731,193 +281,367 @@
                                     <p style="color:blue;">
                                         This text is blue.
                                     </p>
+=======
+>>>>>>> b63a20e1c26ea8154ab6a6bf330d56d27946b74c
 
-                                    <p style="color:red;">
-                                        This text is red.
-                                    </p>
+    <h1>Student Profile</h1>
 
-                                    <p
-                                        style="background-color:yellow; padding: 5px 10px; border-radius: 4px; display: inline-block; color: black;">
-                                        Yellow Background
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <p>
+        This page contains the profile information of a student enrolled at
+        <strong>Eastern Samar State University - Arteche Extension Campus</strong>.
+    </p>
 
-                    <!-- ========================= -->
-                    <!-- FORM -->
-                    <!-- ========================= -->
-                    <div class="dashboard-card">
-                        <h3 class="card-title">Contact the Student</h3>
-                        <form class="student-contact-form">
+    <hr>
 
-                            <p>
+    <!-- ========================= -->
+    <!-- PROFILE PHOTO -->
+    <!-- ========================= -->
 
-                                <label for="fullname">
-                                    Full Name:
-                                </label>
+    <h2>Profile Picture</h2>
 
-                                <br>
+    <img src="./assets/images/default.png"
+         alt="Student Picture"
+         width="200"
+         height="200">
 
-                                <input type="text" id="fullname" name="fullname" placeholder="Christian Lombendencio">
+    <hr>
 
-                            </p>
+    <!-- ========================= -->
+    <!-- PERSONAL INFORMATION -->
+    <!-- ========================= -->
 
-                            <p>
+    <h2>Personal Information</h2>
 
-                                <label for="email">
-                                    Email Address:
-                                </label>
+    <p><strong>Full Name:</strong> Pedro San Juan</p>
 
-                                <br>
+    <p><strong>Student Number:</strong> 2024-0001</p>
 
-                                <input type="email" id="email" name="email" placeholder="lombendencioc@email.com">
+    <p><strong>Program:</strong> Bachelor of Science in Information Technology</p>
 
-                            </p>
+    <p><strong>Year Level:</strong> Second Year</p>
 
-                            <p>
+    <p><strong>Email:</strong> juandelacruz@email.com</p>
 
-                                <label for="course">
-                                    Course:
-                                </label>
+    <p><strong>Address:</strong> Cebu City, Philippines</p>
 
-                                <br>
+    <hr>
 
-                                <select id="course">
+    <!-- ========================= -->
+    <!-- TEXT FORMATTING -->
+    <!-- ========================= -->
 
-                                    <option>BSIT</option>
-                                    <option>BSEd</option>
-                                    <option>BEEd</option>
-                                    <option>BSHM</option>
+    <h2>Text Formatting Examples</h2>
 
-                                </select>
+    <p>
+        <b>Bold</b><br>
+        <strong>Strong Importance</strong><br>
+        <i>Italic</i><br>
+        <em>Emphasized Text</em><br>
+        <u>Underlined Text</u><br>
+        <mark>Highlighted Text</mark><br>
+        <small>Small Text</small><br>
+        H<sub>2</sub>O<br>
+        X<sup>2</sup><br>
+        <del>Deleted Text</del><br>
+        <ins>Inserted Text</ins>
+    </p>
 
-                            </p>
+    <hr>
 
-                            <p>
+    <!-- ========================= -->
+    <!-- BIOGRAPHY -->
+    <!-- ========================= -->
 
-                                Gender
+    <h2>Biography</h2>
 
-                                <br>
+    <p>
+        Juan Dela Cruz is currently taking Bachelor of Science in Information
+        Technology. He enjoys learning web development, programming,
+        database management, and networking.
+    </p>
 
-                                <input type="radio" id="gender-male" name="gender" value="Male">
-                                <label for="gender-male">Male</label>
+    <hr>
 
-                                <br>
+    <!-- ========================= -->
+    <!-- LISTS -->
+    <!-- ========================= -->
 
-                                <input type="radio" id="gender-female" name="gender" value="Female">
-                                <label for="gender-female">Female</label>
+    <h2>Skills</h2>
 
-                            </p>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Microsoft Office</li>
+        <li>Problem Solving</li>
+    </ul>
 
-                            <p>
+    <h2>Educational Background</h2>
 
-                                Interests
+    <ol>
+        <li>Elementary</li>
+        <li>Junior High School</li>
+        <li>Senior High School</li>
+        <li>College</li>
+    </ol>
 
-                                <br>
+    <hr>
 
-                                <input type="checkbox" id="interest-programming" name="interests" value="Programming">
-                                <label for="interest-programming">Programming</label>
+    <!-- ========================= -->
+    <!-- LINKS -->
+    <!-- ========================= -->
 
-                                <br>
+    <h2>Useful Links</h2>
 
-                                <input type="checkbox" id="interest-networking" name="interests" value="Networking">
-                                <label for="interest-networking">Networking</label>
+    <p>
+        <a href="index.html">Home</a><br>
 
-                                <br>
+        <a href="about.html">About</a><br>
 
-                                <input type="checkbox" id="interest-multimedia" name="interests" value="Multimedia">
-                                <label for="interest-multimedia">Multimedia</label>
+        <a href="academics.html">Academics</a><br>
 
-                            </p>
+        <a href="contact.html">Contact</a><br>
 
-                            <p>
+        <a href="https://www.google.com" target="_blank">
+            Visit Google
+        </a>
+    </p>
 
-                                <label for="message">
-                                    Message
-                                </label>
+    <hr>
 
-                                <br>
+    <!-- ========================= -->
+    <!-- TABLE -->
+    <!-- ========================= -->
 
-                                <textarea id="message" rows="5" cols="40"
-                                    placeholder="Write your message here..."></textarea>
+    <h2>Current Subjects</h2>
 
-                            </p>
+    <table border="1" cellpadding="10">
 
-                            <input type="submit" value="Submit" class="btn-submit">
+        <tr>
+            <th>Course Code</th>
+            <th>Description</th>
+            <th>Instructor</th>
+            <th>Schedule</th>
+        </tr>
 
-                            <input type="reset" value="Clear" class="btn-reset">
+        <tr>
+            <td>IT413 / Elective 3*</td>
+            <td>Web Systems and Technologies</td>
+            <td>Mr. Silla</td>
+            <td>MW 7:30 AM</td>
+        </tr>
 
-                        </form>
-                    </div>
+        <tr>
+            <td>Comp 212</td>
+            <td>Object Oriented Programming</td>
+            <td>Mr. Silla</td>
+            <td>TTH 10:00 AM</td>
+        </tr>
 
-                    <!-- ========================= -->
-                    <!-- IFRAME -->
-                    <!-- ========================= -->
-                    <div class="dashboard-card">
-                        <h3 class="card-title">School Location</h3>
-                        <div class="map-container">
-                            <iframe src="https://www.google.com" width="600" height="300" title="School Location"
-                                allowfullscreen="" loading="lazy">
-                            </iframe>
-                        </div>
-                    </div>
+        <tr>
+            <td>IT 314 / Elective 1*</td>
+            <td>Advanced Database Systems</td>
+            <td>Mr. Silla</td>
+            <td>MWF 2:00 PM</td>
+        </tr>
 
-                </div>
+    </table>
 
-            </div>
-        </div>
-    </section>
+    <hr>
+
+    <!-- ========================= -->
+    <!-- BLOCK AND INLINE ELEMENTS -->
+    <!-- ========================= -->
+
+    <h2>Block and Inline Elements</h2>
+
+    <div>
+
+        <p>
+            This paragraph is inside a
+            <span>DIV</span> element.
+
+            The word
+            <span style="color:red;">
+                RED
+            </span>
+
+            is displayed using a SPAN element.
+        </p>
+
+    </div>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- COLORS -->
+    <!-- ========================= -->
+
+    <h2>HTML Color Examples</h2>
+
+    <p style="color:blue;">
+        This text is blue.
+    </p>
+
+    <p style="color:red;">
+        This text is red.
+    </p>
+
+    <p style="background-color:yellow;">
+        Yellow Background
+    </p>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- FORM -->
+    <!-- ========================= -->
+
+    <h2>Contact the Student</h2>
+
+    <form>
+
+        <p>
+
+            <label for="fullname">
+                Full Name:
+            </label>
+
+            <br>
+
+            <input
+                type="text"
+                id="fullname"
+                name="fullname">
+
+        </p>
+
+        <p>
+
+            <label for="email">
+                Email Address:
+            </label>
+
+            <br>
+
+            <input
+                type="email"
+                id="email"
+                name="email">
+
+        </p>
+
+        <p>
+
+            <label for="course">
+                Course:
+            </label>
+
+            <br>
+
+            <select id="course">
+
+                <option>BSIT</option>
+                <option>BSEd</option>
+                <option>BEEd</option>
+                <option>BSHM</option>
+
+            </select>
+
+        </p>
+
+        <p>
+
+            Gender
+
+            <br>
+
+            <input
+                type="radio"
+                name="gender">
+
+            Male
+
+            <br>
+
+            <input
+                type="radio"
+                name="gender">
+
+            Female
+
+        </p>
+
+        <p>
+
+            Interests
+
+            <br>
+
+            <input type="checkbox">
+
+            Programming
+
+            <br>
+
+            <input type="checkbox">
+
+            Networking
+
+            <br>
+
+            <input type="checkbox">
+
+            Multimedia
+
+        </p>
+
+        <p>
+
+            <label for="message">
+                Message
+            </label>
+
+            <br>
+
+            <textarea
+                id="message"
+                rows="5"
+                cols="40"></textarea>
+
+        </p>
+
+        <input type="submit" value="Submit">
+
+        <input type="reset" value="Clear">
+
+    </form>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- IFRAME -->
+    <!-- ========================= -->
+
+    <h2>School Location</h2>
+
+    <iframe
+        src="https://www.google.com"
+        width="600"
+        height="300">
+    </iframe>
+
+    <hr>
 
     <!-- ========================= -->
     <!-- FOOTER -->
     <!-- ========================= -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>Eastern Samar State University AEC</h3>
-                    <p>National Highway, Sitio Core<br>Balud Arteche Eastern Samar<br>Philippines</p>
-                    <p>Phone: (123) 456-7890<br>Email: info@essu.edu</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="academics.html">Academics</a></li>
-                        <li><a href="campus-life.html">Campus Life</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="#login.php">Student Portal</a></li>
-                        <li><a href="#login.php">Faculty Portal</a></li>
-                        <li><a href="#">Library</a></li>
-                        <li><a href="#">Campus Directory</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Connect With Us</h3>
-                    <p>Stay updated with the latest news and events from ESSU AEC by following us on social media.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2026 ESSU - Arteche. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+
+    <p>
+
+        &copy; 2026 ESSU - Arteche
+
+    </p>
 
 </body>
 
